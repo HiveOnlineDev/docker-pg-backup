@@ -9,8 +9,8 @@
 # Check if each var is declared and if not,
 # set a sensible default
 
-if [ -z "${PGUSER}" ]; then
-  PGUSER=docker
+if [ -z "${POSTGRES_USER}" ]; then
+  POSTGRES_USER=docker
 fi
 
 if [ -z "${POSTGRES_PASS}" ]; then
@@ -40,7 +40,7 @@ fi
 
 echo "
 export PGUSER=$PGUSER
-export PGPASSWORD=$POSTGRES_PASS
+export PGPASSWORD=\"$POSTGRES_PASS\"
 export PGPORT=$POSTGRES_PORT
 export PGHOST=$POSTGRES_HOST
 export PGDATABASE=$POSTGRES_DBNAME
